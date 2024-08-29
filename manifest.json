@@ -1,0 +1,59 @@
+{
+  "background": {
+    "service_worker": "./dist/background.js"
+  },
+  "short_name": "RDS",
+  "description": "RDS",
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "js": ["./dist/contentScript.js"],
+      "matches": ["<all_urls>"],
+      "exclude_matches": [],
+      "run_at": "document_start"
+    }
+  ],
+
+  "icons": {
+    "128": "/assets/images/logo.png"
+  },
+  "action": {
+    "default_title": "RDS",
+    "default_popup": "/html/popup.html"
+  },
+  "manifest_version": 3,
+
+  "name": "RDS",
+  "externally_connectable": {
+    "matches": ["*://*.realdevsquad.com/*", "https://localhost:3000/*"]
+  },
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["./dist/contentScript.js"]
+    },
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["/assets/*"]
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "permissions": [
+    "activeTab",
+    "cookies",
+    "background",
+    "management",
+    "desktopCapture",
+    "webRequest",
+    "scripting",
+    "storage",
+    "contextMenus",
+    "webNavigation",
+    "tabs"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "version": "0.0.1"
+}
