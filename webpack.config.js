@@ -103,8 +103,8 @@ const overallConfigurations = {
   ],
   entry: {
     // Building JS Files
-    bundle: path.resolve(__dirname, './src/screens/Popup/Index.tsx'),
-    options: path.resolve(__dirname, './src/screens/Options/Index.tsx'),
+    bundle: path.resolve(__dirname, './src/screens/Popup/Popup.tsx'),
+    options: path.resolve(__dirname, './src/screens/Options/Options.tsx'),
     contentScript: path.resolve(__dirname, './src/scripts/contentScript.ts'),
     background: path.resolve(__dirname, './src/scripts/background.ts'),
   },
