@@ -1,9 +1,11 @@
 import { createRoot } from 'react-dom/client';
-import React from 'react';
-export default function Popup() {
+import React, { useState } from 'react';
+
+function Popup() {
+  const [state] = useState('agdfdsafsd');
   return (
     <div>
-      <h1>Popup</h1>
+      <h1>popup {state}</h1>
     </div>
   );
 }

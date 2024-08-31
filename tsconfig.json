@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "jsx": "react",
-    "baseUrl": "src"
+    "lib": ["dom", "esnext"],
+    "module": "CommonJS",
+
+    "esModuleInterop": true
   },
   "include": ["src", "scripts"]
 }
