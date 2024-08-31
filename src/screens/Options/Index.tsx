@@ -1,5 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import React from 'react';
+import { getCookie } from '@/utils/helper';
+console.log(getCookie);
 export default function Options() {
   return (
     <div>

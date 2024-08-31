@@ -68,19 +68,15 @@ const overallConfigurations = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.join(__dirname, 'scripts', 'background.ts'),
-          to: path.join(jsDestinationFilePath, 'background.js'),
-        },
-        {
-          from: path.join(__dirname, 'html'),
+          from: path.join(__dirname, 'src/html'),
           to: path.join(restDestinationFilePath, 'html'),
         },
         {
-          from: path.join(__dirname, 'css'),
+          from: path.join(__dirname, 'src/css'),
           to: path.join(restDestinationFilePath, 'css'),
         },
         {
-          from: path.join(__dirname, 'assets', 'images'),
+          from: path.join(__dirname, 'src', 'assets', 'images'),
           to: path.join(restDestinationFilePath, 'assets/images'),
           globOptions: {
             ignore: ['**/node_modules/**'],
@@ -109,17 +105,14 @@ const overallConfigurations = {
     // Building JS Files
     bundle: path.resolve(__dirname, './src/screens/Popup/Index.tsx'),
     options: path.resolve(__dirname, './src/screens/Options/Index.tsx'),
-    contentScript: path.resolve(__dirname, './scripts/contentScript.ts'),
+    contentScript: path.resolve(__dirname, './src/scripts/contentScript.ts'),
+    background: path.resolve(__dirname, './src/scripts/background.ts'),
   },
 
   resolve: {
     extensions: ['.ts', '.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      components: path.resolve(__dirname, 'src/components'),
-      screens: path.resolve(__dirname, 'src/screens'),
-      services: path.resolve(__dirname, 'src/services'),
-      hooks: path.resolve(__dirname, 'src/hooks'),
     },
   },
   module: {
