@@ -9,10 +9,8 @@ export default function Options() {
     </div>
   );
 }
-const rootElement = document.getElementById('options');
+const rootElement = document?.getElementById('options');
 if (rootElement) {
   const root = createRoot(rootElement);
   root.render(<Options />);
-} else {
-  console.error('No element with id "options" found');
 }
